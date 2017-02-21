@@ -248,12 +248,14 @@ class SampleTest(unittest.TestCase):
 #   nominal cases: f -> u**2
 #                 lowbound -> 0
 #                 highbound -> 1
-#                 s -> 4
+#                 s -> 16
 #                 simpson ~= 0.5
-#                 f-> u
+#                  f-> u
 #                 lowbound -> 0
 #                 highbound -> 1
-#                 s -> 
+#                 s -> 16
+#                 simpson ~= 0.333
+#
 
 # Sad path
 #       none ... all inputs are pre-validated
@@ -265,8 +267,8 @@ class SampleTest(unittest.TestCase):
 
     def test500_010_4SlicesOf1WidthEachFunctionUSquared(self):
         mySample = SM.Sample(self.nominalN)
-        self.assertAlmostEquals(mySample.simpson(self.f, 0,1,4) , 0.333 , 4)
+        self.assertAlmostEquals(mySample.simpson(self.f, 0,1,16) , 0.333 , 4)
 
     def test500_020_4SlicesOf1WidthEachFunctionU(self):
         mySample = SM.Sample(self.nominalN)
-        self.assertAlmostEquals(mySample.simpson(self.f1, 0, 1, 4), 0.5, 4)
+        self.assertAlmostEquals(mySample.simpson(self.f1, 0, 1, 16), 0.5, 4)
