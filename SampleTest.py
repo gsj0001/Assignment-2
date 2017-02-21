@@ -238,6 +238,17 @@ class SampleTest(unittest.TestCase):
 # 500 simpson
 # Analysis
 #   inputs
-#       width -> float mandatory validated
-
+#       lowbound -> integer .GE. 0, mandatory, validated
+#       highbound -> integer .GT. 0, mandatory, validated
+#       s -> integer, mandatory, validated
+#   output
+#       float .GE. 0
+# Happy path
+#       for n = 1 (simpler math):
         
+# Sad path
+#       none ... all inputs are pre-validated
+
+    def test500_010_4SlicesOf1WidthEach(self):
+        mySample = SM.Sample(1)
+        self.assertAlmostEquals(mySample.simpson(0,4,4) , )
