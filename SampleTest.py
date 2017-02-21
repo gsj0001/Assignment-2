@@ -285,7 +285,7 @@ class SampleTest(unittest.TestCase):
         mySample = SM.Sample(self.nominalN)
         self.assertAlmostEquals(mySample.simpson(mySample.f(mySample.getN(), 1, 4)), 0 , 2)
 
-# 600 integrate
+# 700 integrate
 # Analysis
 #   inputs
 #       lowbound -> integer .GE. 0, mandatory, validated
@@ -295,10 +295,10 @@ class SampleTest(unittest.TestCase):
 # Happy path
 #       integration from x to x -> always 0
 
-    def test600_010_integrationOfZeroArea(self):
+    def test700_010_integrationOfZeroArea(self):
         mySample = SM.Sample(self.nominalN)
         self.assertEquals(mySample.integrate(1,1,self.nominalN,mySample.f(self.nominalT,self.nominalN)), 0)
 
-    def test600_020_integrationFunctionConstant(self):
+    def test700_020_integrationFunctionConstant(self):
         mySample = SM.Sample(self.nominalN)
         self.assertEquals(mySample.integrate(0,1,self.nominalN, self.f0(self.nominalN)), self.nominalN)
