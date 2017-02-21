@@ -245,11 +245,15 @@ class SampleTest(unittest.TestCase):
 #   output
 #       float .GE. 0
 # Happy path
-#   nominal case: f -> u**2
+#   nominal cases: f -> u**2
 #                 lowbound -> 0
 #                 highbound -> 1
 #                 s -> 4
 #                 simpson ~= 0.5
+#                 f-> u
+#                 lowbound -> 0
+#                 highbound -> 1
+#                 s -> 
 
 # Sad path
 #       none ... all inputs are pre-validated

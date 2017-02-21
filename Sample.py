@@ -69,6 +69,7 @@ class Sample(object):
 
     def simpson(self, f, lowBound, highBound, s=4):
         width = (float)(highBound - lowBound) / s
+        print "width is " and width
         sIndex = 0
         valueIndex = 0
         simpsonSum = 0
