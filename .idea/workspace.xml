@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89407dd6-72ec-4398-9795-c5369d8bd9dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample.py" afterPath="$PROJECT_DIR$/Sample.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SampleTest.py" afterPath="$PROJECT_DIR$/SampleTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleTest.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SampleTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SampleTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="273" column="66" lean-forward="false" selection-start-line="273" selection-start-column="66" selection-end-line="273" selection-end-column="66" />
+            <state relative-caret-position="672">
+              <caret line="297" column="27" lean-forward="true" selection-start-line="297" selection-start-column="27" selection-end-line="297" selection-end-column="27" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -39,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sample.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sample.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+            <state relative-caret-position="196">
+              <caret line="66" column="51" lean-forward="false" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -66,8 +67,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/convertString2Dictionary.py" />
-        <option value="$PROJECT_DIR$/SampleTest.py" />
         <option value="$PROJECT_DIR$/Sample.py" />
+        <option value="$PROJECT_DIR$/SampleTest.py" />
       </list>
     </option>
   </component>
@@ -292,18 +293,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 09m 06s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 13m 48s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 38m 38s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 42m 38s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 43m 39s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
@@ -320,6 +309,18 @@
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.02.21 at 13h 03m 12s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 13h 07m 19s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 13h 08m 25s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 13h 09m 07s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 13h 09m 39s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
   </component>
@@ -440,21 +441,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleTest.py">
+    <entry file="file://$PROJECT_DIR$/Sample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="273" column="66" lean-forward="false" selection-start-line="273" selection-start-column="66" selection-end-line="273" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="196">
+          <caret line="66" column="51" lean-forward="false" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sample.py">
+    <entry file="file://$PROJECT_DIR$/SampleTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="672">
+          <caret line="297" column="27" lean-forward="true" selection-start-line="297" selection-start-column="27" selection-end-line="297" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
