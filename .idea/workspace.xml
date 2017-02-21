@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89407dd6-72ec-4398-9795-c5369d8bd9dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample.py" afterPath="$PROJECT_DIR$/Sample.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SampleTest.py" afterPath="$PROJECT_DIR$/SampleTest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="SampleTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SampleTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="263" column="48" lean-forward="false" selection-start-line="263" selection-start-column="48" selection-end-line="263" selection-end-column="48" />
+            <state relative-caret-position="604">
+              <caret line="261" column="76" lean-forward="false" selection-start-line="261" selection-start-column="76" selection-end-line="261" selection-end-column="76" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -43,8 +42,8 @@
       <file leaf-file-name="Sample.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sample.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+            <state relative-caret-position="689">
+              <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -73,6 +72,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="212" />
+    <option name="y" value="19" />
     <option name="width" value="1640" />
     <option name="height" value="1080" />
   </component>
@@ -291,15 +292,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_(TDD) - 2017.02.18 at 12h 28m 24s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.02.18 at 12h 29m 05s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="All_Tests_(TDD) - 2017.02.18 at 13h 06m 59s.xml">
-      <configuration name="All Tests (TDD)" configurationId="tests" />
-    </history-entry>
     <history-entry file="All_Tests_(TDD) - 2017.02.18 at 13h 09m 03s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
@@ -321,9 +313,18 @@
     <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 06m 49s.xml">
       <configuration name="All Tests (TDD)" configurationId="tests" />
     </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 08m 19s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 08m 45s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="All_Tests_(TDD) - 2017.02.21 at 12h 09m 06s.xml">
+      <configuration name="All Tests (TDD)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1640" height="1080" extended-state="0" />
+    <frame x="212" y="19" width="1640" height="1080" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21243842" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -335,7 +336,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.205291" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.205291" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -441,16 +442,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Sample.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="70" column="18" lean-forward="true" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+        <state relative-caret-position="689">
+          <caret line="70" column="20" lean-forward="false" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SampleTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="263" column="48" lean-forward="false" selection-start-line="263" selection-start-column="48" selection-end-line="263" selection-end-column="48" />
+        <state relative-caret-position="604">
+          <caret line="261" column="76" lean-forward="false" selection-start-line="261" selection-start-column="76" selection-end-line="261" selection-end-column="76" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
