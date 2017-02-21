@@ -269,7 +269,7 @@ class SampleTest(unittest.TestCase):
     def f1(self, u):
         return u
     def f0(self, u):
-        return 0
+        return 1
 
     def test500_010_4SlicesOf1WidthEachFunctionUSquared(self):
         mySample = SM.Sample(self.nominalN)
@@ -299,6 +299,6 @@ class SampleTest(unittest.TestCase):
         mySample = SM.Sample(self.nominalN)
         self.assertEquals(mySample.integrate(1,1,self.nominalN,mySample.f(self.nominalT,self.nominalN)), 0)
 
-    def test600_020_integrationFunctionU(self):
+    def test600_020_integrationFunctionConstant(self):
         mySample = SM.Sample(self.nominalN)
-        self.assertAlmostEquals(mySample.integrate(0,1,self.nominalN, f1(self.nominalN)), )
+        self.assertEquals(mySample.integrate(0,1,self.nominalN, f0(self.nominalN)), self.nominalN)
