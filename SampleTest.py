@@ -249,7 +249,7 @@ class SampleTest(unittest.TestCase):
 #                 lowbound -> 0
 #                 highbound -> 1
 #                 s -> 4
-#                 simpson ~= 
+#                 simpson ~= 0.5
 
 # Sad path
 #       none ... all inputs are pre-validated
@@ -259,4 +259,4 @@ class SampleTest(unittest.TestCase):
 
     def test500_010_4SlicesOf1WidthEach(self):
         mySample = SM.Sample(self.nominalN)
-        self.assertAlmostEquals(mySample.simpson(0,4,4) , 3.058 , 4)
+        self.assertAlmostEquals(mySample.simpson(self.f, 0,1,4) , 0.5 , 4)
