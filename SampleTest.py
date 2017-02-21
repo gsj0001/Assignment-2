@@ -256,7 +256,13 @@ class SampleTest(unittest.TestCase):
 
     def f(self, u):
         return u**2
+    def f1(self, u):
+        return u
 
     def test500_010_4SlicesOf1WidthEachFunctionUSquared(self):
         mySample = SM.Sample(self.nominalN)
         self.assertAlmostEquals(mySample.simpson(self.f, 0,1,4) , 0.333 , 4)
+
+    def test500_020_4SlicesOf1WidthEachFunctionU(self):
+        mySample = SM.Sample(self.nominalN)
+        self.assertAlmostEquals(mySample.simpson(self.f1, 0, 1, 4), 0.5, 4)
