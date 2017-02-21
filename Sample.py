@@ -81,6 +81,7 @@ class Sample(object):
                 simpsonSum+= 4*f(valueIndex)
             valueIndex+= width
             sIndex += 1
+        return simpsonSum
 
 
         
