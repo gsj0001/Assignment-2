@@ -69,11 +69,10 @@ class Sample(object):
 
     def simpson(self, f, lowBound, highBound, s=4):
         width = (float)(highBound - lowBound) / s
-        print "width is " and width
         sIndex = 0
-        valueIndex = 0
+        valueIndex = lowBound
         simpsonSum = 0
-        while sIndex <= highBound :
+        while sIndex <= s :
             if sIndex == 1 or sIndex == s:
                 simpsonSum += f(valueIndex)
             elif sIndex % 2 == 1 :
