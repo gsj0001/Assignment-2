@@ -68,18 +68,18 @@ class Sample(object):
         return 0
 
     def simpson(self, f, lowBound, highBound, s=4):
-        width = (highBound - lowBound) / s
+        width = (float)(highBound - lowBound) / s
         sIndex = 0
         valueIndex = 0
         simpsonSum = 0
         while sIndex <= highBound :
-            if sIndex == 1 or sIndex == highBound:
-                simpsonSum+= f(valueIndex)
+            if sIndex == 1 or sIndex == s:
+                simpsonSum += f(valueIndex)
             elif sIndex % 2 == 1 :
-                simpsonSum+= 2*f(valueIndex)
+                simpsonSum += 2 * f(valueIndex)
             elif sIndex % 2 == 0 :
-                simpsonSum+= 4*f(valueIndex)
-            valueIndex+= width
+                simpsonSum+= 4 * f(valueIndex)
+            valueIndex += width
             sIndex += 1
         return simpsonSum
 
