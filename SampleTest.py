@@ -268,6 +268,8 @@ class SampleTest(unittest.TestCase):
         return u**2
     def f1(self, u):
         return u
+    def f0(self, u):
+        return 0
 
     def test500_010_4SlicesOf1WidthEachFunctionUSquared(self):
         mySample = SM.Sample(self.nominalN)
@@ -293,6 +295,6 @@ class SampleTest(unittest.TestCase):
 # Happy path
 #       integration from x to x -> always 0
 
-    def test500_010_integrationOfZeroArea(self):
+    def test600_010_integrationOfZeroArea(self):
         mySample = SM.Sample(self.nominalN)
         self.assertEquals(mySample.integrate(1,1,self.nominalN,mySample.f(self.nominalT,self.nominalN)), 0)
