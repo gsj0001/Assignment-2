@@ -238,17 +238,25 @@ class SampleTest(unittest.TestCase):
 # 500 simpson
 # Analysis
 #   inputs
+#       f -> function of u that we'll be integrating, validated
 #       lowbound -> integer .GE. 0, mandatory, validated
 #       highbound -> integer .GT. 0, mandatory, validated
 #       s -> integer, mandatory, validated
 #   output
 #       float .GE. 0
 # Happy path
-#       for n = 1 (simpler math):
-        
+#   nominal case: f -> u**2
+#                 lowbound -> 0
+#                 highbound -> 1
+#                 s -> 4
+#                 simpson ~= 
+
 # Sad path
 #       none ... all inputs are pre-validated
 
+    def f(self, u):
+        return u**2
+
     def test500_010_4SlicesOf1WidthEach(self):
-        mySample = SM.Sample(1)
-        self.assertAlmostEquals(mySample.simpson(0,4,4) , )
+        mySample = SM.Sample(self.nominalN)
+        self.assertAlmostEquals(mySample.simpson(0,4,4) , 3.058 , 4)
