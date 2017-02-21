@@ -70,8 +70,10 @@ class Sample(object):
         simpsonNew = epsilon
         s = 4
         while (abs((simpsonNew - simpsonOld ) / simpsonNew) > epsilon):
-            
-        return 0
+            simpsonOld = simpsonNew
+            simpsonNew = self.simpson(self, f, lowBound, highBound, s)
+            s = s * 2
+        return simpsonNew
 
     def simpson(self, f, lowBound, highBound, s):
         width = (float)(highBound - lowBound) / s
