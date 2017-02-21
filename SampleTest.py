@@ -298,3 +298,7 @@ class SampleTest(unittest.TestCase):
     def test600_010_integrationOfZeroArea(self):
         mySample = SM.Sample(self.nominalN)
         self.assertEquals(mySample.integrate(1,1,self.nominalN,mySample.f(self.nominalT,self.nominalN)), 0)
+
+    def test600_020_integrationFunctionU(self):
+        mySample = SM.Sample(self.nominalN)
+        self.assertAlmostEquals(mySample.integrate(0,1,self.nominalN, f1(self.nominalN)), )
