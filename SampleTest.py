@@ -234,4 +234,10 @@ class SampleTest(unittest.TestCase):
     def test400_020_ShouldCalculateF(self):
         mySample = SM.Sample(self.nominalN)
         self.assertAlmostEquals(mySample.f(1, 5), 0.578703704)
+
+# 500 simpson
+# Analysis
+#   inputs
+#       width -> float mandatory validated
+
         
