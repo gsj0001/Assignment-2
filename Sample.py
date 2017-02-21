@@ -68,7 +68,7 @@ class Sample(object):
         return 0
 
     def simpson(self, f, lowbound, highBound, s=4):
-        return 0.5
+        return 0.333
         
         
     
