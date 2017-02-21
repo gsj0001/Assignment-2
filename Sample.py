@@ -67,7 +67,7 @@ class Sample(object):
     def integrate(self, lowBound, highBound, n, f):
         return 0
 
-    def simpson(self, f, lowBound, highBound, s=4):
+    def simpson(self, f, lowBound, highBound, s):
         width = (float)(highBound - lowBound) / s
         sIndex = 0
         valueIndex = lowBound
