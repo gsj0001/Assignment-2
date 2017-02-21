@@ -295,4 +295,4 @@ class SampleTest(unittest.TestCase):
 
     def test500_010_integrationOfZeroArea(self):
         mySample = SM.Sample(self.nominalN)
-        self.assertEquals()
+        self.assertEquals(mySample.integrate(1,1,self.nominalN,mySample.f(self.nominalT,self.nominalN)), 0)
