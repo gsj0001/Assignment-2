@@ -301,4 +301,4 @@ class SampleTest(unittest.TestCase):
 
     def test600_020_integrationFunctionConstant(self):
         mySample = SM.Sample(self.nominalN)
-        self.assertEquals(mySample.integrate(0,1,self.nominalN, f0(self.nominalN)), self.nominalN)
+        self.assertEquals(mySample.integrate(0,1,self.nominalN, self.f0(self.nominalN)), self.nominalN)
