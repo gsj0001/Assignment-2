@@ -1,17 +1,17 @@
-# import math
-# import unittest
+ import math
+ import unittest
+
+import Sample as SM
 #
-# import Sample as SM
 #
+ class SampleTest(unittest.TestCase):
+
+    def setUp(self):
+         self.nominalN  = 4
+         self.nominalT = 1.4398
 #
-# class SampleTest(unittest.TestCase):
-#
-#     def setUp(self):
-#         self.nominalN  = 4
-#         self.nominalT = 1.4398
-#
-#     def tearDown(self):
-#         pass
+     def tearDown(self):
+         pass
 # # -----------------------------------------------------------------------
 # # ---- Acceptance Tests
 # # 100 constructor
