@@ -11,7 +11,7 @@ def dispatch(values=None):
 
     #Perform designated function
     if(values['op'] == 'adjust'):
-
+        if(values['observation'] == None or values['observation'] == None or values['observation'] == None or values['observation'] == None or values['observation'] == None)
 
         return values    #<-------------- replace this with your implementation
     elif(values['op'] == 'predict'):
