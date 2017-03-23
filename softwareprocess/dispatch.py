@@ -11,7 +11,7 @@ def dispatch(values=None):
 
     #Perform designated function
     if(values['op'] == 'adjust'):
-        if !('observation' in values) or !('height' in values) or !('pressure' in values) or !('horizon' in values) or !('temperature' in values) :
+        if not ('observation' in values) or not ('height' in values) or not ('pressure' in values) or not ('horizon' in values) or not ('temperature' in values) :
             return {'error' : 'mandatory information is missing'}
 
         return values    #<-------------- replace this with your implementation
