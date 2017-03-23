@@ -26,5 +26,5 @@ class dispatchTest(unittest.TestCase):
     # Added Sad paths
 
     def test200_910_OpAdjustButNoInformationGiven(self):
-        self.assertEquals(SM.dispath({'op' : 'adjust'}) , {'error' : 'mandatory information missing'})
+        self.assertEquals(SM.dispatch({'op' : 'adjust'}) , {'error' : 'mandatory information missing'})
 
