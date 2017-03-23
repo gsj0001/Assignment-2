@@ -1,6 +1,7 @@
-import unittest
-import Sample as SM
 import math
+import unittest
+
+import Sample as SM
 
 
 class SampleTest(unittest.TestCase):
