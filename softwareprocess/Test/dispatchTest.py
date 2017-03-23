@@ -1,6 +1,6 @@
 import unittest
 
-import CSSE.dispatch as SM
+import softwareprocess.dispatch as SM
 
 
 class dispatchTest(unittest.TestCase):
