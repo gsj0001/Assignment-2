@@ -13,7 +13,7 @@ class dispatchTest(unittest.TestCase):
 
     #Happy paths for stubbed out code
     def test100_000_OpPredictReturnsADictionary(self):
-        self.isInstance(SM.dispatch({'op' : 'predict'}), dict )
+        self.assertIsInstance(SM.dispatch({'op' : 'predict'}), dict )
 
     # Some Sad paths, that came with the base code
     def test100_910_NoValuesGiven(self):
