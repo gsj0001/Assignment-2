@@ -14,6 +14,7 @@ def dispatch(values=None):
         if ( not 'observation' in values) or  ( not 'height' in values) or ( not 'pressure' in values) or ( not 'horizon' in values) or ( not 'temperature' in values) :
             return {'error' : 'mandatory information is missing'}
 
+
         return values    #<-------------- replace this with your implementation
     elif(values['op'] == 'predict'):
         return values    #This calculation is stubbed out

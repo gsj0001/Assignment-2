@@ -6,12 +6,13 @@ import softwareprocess.dispatch as SM
 class dispatchTest(unittest.TestCase):
 
     def setUp(self):
+        self.nominalOpAdjustValues = {'observation' : '30d1.5' , 'height' : '19.0', 'pressure' : '1000', 'horizon' : 'artificial', 'op': 'adjust', 'temperature': '85'}
         pass
 
     def tearDown(self):
         pass
 
-    #Happy paths for stubbed out code
+    #Happy path for stubbed out code
     def test100_000_OpPredictReturnsADictionary(self):
         self.assertIsInstance(SM.dispatch({'op' : 'predict'}), dict )
 
@@ -26,5 +27,11 @@ class dispatchTest(unittest.TestCase):
     # Added Sad paths
 
     def test200_910_OpAdjustButNoInformationGiven(self):
-        self.assertEquals(SM.dispatch({'op' : 'adjust'}) , {'error' : 'mandatory information missing'})
+        self.assertEquals(SM.dispatch({'op' : 'adjust'}) , {'error' : 'mandatory information is missing'})
+
+    # Added Happy paths
+
+    def test200_100_OpAdjustReturnsAnAltitude(self):
+        self.assertIsInstance(SM.dispatch(self.nominalOpAdjustValues) , dict)
+        self.assertEquals('altitude' in SM.dispatch(self.nominalOpAdjustValues) , True)
 
