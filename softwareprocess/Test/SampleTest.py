@@ -1,7 +1,7 @@
  import math
  import unittest
 
-import Sample as SM
+import CSSE.Sample as SM
 #
 #
  class SampleTest(unittest.TestCase):
