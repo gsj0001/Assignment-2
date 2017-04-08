@@ -16,3 +16,7 @@ class predictTest(unittest.TestCase):
     def test1003_DateNotIncluded(self):
         testDict = SM.predict({'op':'predict', 'body': 'Betelgeuse', 'time': '03:15:42'})
         self.assertEquals(testDict['date'], '2001-01-01')
+
+    def test1004_TimeNotIncluded(self):
+        testDict = SM.predict({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17'})
+        self.assertEquals(testDict['time'], '00:00:00')
