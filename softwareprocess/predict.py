@@ -10,14 +10,22 @@ def predict(values=None):
     if(not values['body'] in starNames):
         values['error'] = 'star not in catalog'
         return values
+
+    #Give default date
     if(not 'date' in values):
         values['date'] = '2001-01-01'
+
+    #Check values within date
     dateValues = values['date'].split('-')
     if(dateValues[0] >= __CURRENT_YEAR__ or dateValues[1] > 12 or dateValues[2] > 31):
         values['error'] = 'invalid date'
         return values
+
+    #Give default time
     if(not 'time' in values):
         values['time'] = '00:00:00'
+
+    #Check values within time
     timeValues = values['time'].split(':')
     if(timeValues[0] > 23 or timeValues[1] > 59 or timeValues[2] > 59):
         values['error'] = 'invalid time'
