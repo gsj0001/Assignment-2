@@ -23,7 +23,7 @@ def predict(values=None):
     dateValues = values['date'].split('-')
     for s in dateValues:
         print(s)
-    if(dateValues[0] > __CURRENT_YEAR__ or dateValues[1] > 12 or dateValues[2] > 31):
+    if(int(dateValues[0]) > __CURRENT_YEAR__ or int(dateValues[1]) > 12 or int(dateValues[2]) > 31):
         values['error'] = 'invalid date'
         return values
 
