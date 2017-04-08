@@ -20,3 +20,7 @@ class predictTest(unittest.TestCase):
     def test1004_TimeNotIncluded(self):
         testDict = SM.predict({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17'})
         self.assertEquals(testDict['time'], '00:00:00')
+
+    def sanityTest100_tableLengthsAreTheSame(self):
+        self.assertEquals(SM.predict.starNames.len(), SM.predict.sideHourAngles.len())
+        self.assertEquals(SM.predict.starNames.len(), SM.predict.)
