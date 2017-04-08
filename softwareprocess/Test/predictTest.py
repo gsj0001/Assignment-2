@@ -23,6 +23,6 @@ class predictTest(unittest.TestCase):
 
     def test1005_LookUpTable(self):
         testDict = SM.predict({'op':'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:15:42'})
-        self.assertEquals(testDict.values['latitude'], '7d24.3')
+        self.assertEquals(testDict['latitude'], '7d24.3')
         self.assertEquals(testDict.siderealHourAngle, '270d59.1')
         self.assertEquals(testDict.declination, '7d24.3')
