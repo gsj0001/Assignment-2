@@ -11,4 +11,4 @@ class predictTest(unittest.TestCase):
         self.assertEquals(SM.predict({'op':'predict', 'body': 'unknown', 'date': '2016-01-17', 'time': '03:15:42'}), {'op':'predict', 'body': 'unknown', 'date': '2016-01-17', 'time': '03:15:42', 'error' : 'star not in catalog'})
 
     def test1002_InvalidDate(self):
-        self.assertEquals(SM.predict({'op':'predict', 'body': 'Betelguese', 'date': '2016-99-17', 'time': '03:15:42'}), {'op':'predict', 'body': 'Betelguese', 'date': '2016-99-17', 'time': '03:15:42', 'error': 'invalid date'})
+        self.assertEquals(SM.predict({'op':'predict', 'body': 'Betelguese', 'date': '2016-99-17', 'time': '03:15:42'}), {'op':'predict', 'body': 'Betelgeuse', 'date': '2016-99-17', 'time': '03:15:42', 'error': 'invalid date'})
