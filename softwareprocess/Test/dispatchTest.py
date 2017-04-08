@@ -4,13 +4,13 @@ import softwareprocess.dispatch as SM
 
 
 class dispatchTest(unittest.TestCase):
-    # def setUp(self):
-    #     self.nominalOpAdjustValues = {'observation' : '30d1.5' , 'height' : '19.0', 'pressure' : '1000', 'horizon' : 'artificial', 'op': 'adjust', 'temperature': '85'}
-    #     pass
-    #
-    # def tearDown(self):
-    #     pass
-    #
+    def setUp(self):
+        self.nominalOpAdjustValues = {'observation' : '30d1.5' , 'height' : '19.0', 'pressure' : '1000', 'horizon' : 'artificial', 'op': 'adjust', 'temperature': '85'}
+        pass
+
+    def tearDown(self):
+        pass
+
     # #Happy path for stubbed out code
     # def test100_000_OpPredictReturnsADictionary(self):
     #     self.assertIsInstance(SM.dispatch({'op' : 'predict'}), dict )
