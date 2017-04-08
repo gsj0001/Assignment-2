@@ -26,8 +26,3 @@ class predictTest(unittest.TestCase):
         self.assertEquals(testDict.values['latitude'], '7d24.3')
         self.assertEquals(testDict.siderealHourAngle, '270d59.1')
         self.assertEquals(testDict.declination, '7d24.3')
-
-
-    def testSanity100_tableListLengthsAreTheSame(self):
-        self.assertEquals(SM.predict.starNames.len(), SM.predict.sideHourAngles.len())
-        self.assertEquals(SM.predict.starNames.len(), SM.predict.declinations.len())
