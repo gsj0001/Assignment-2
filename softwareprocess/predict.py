@@ -4,5 +4,6 @@ def predict(values=None):
     if(values == None or not 'body' in values or not 'date' in values or not 'time' in values):
         return {'error':'mandatory information is missing', 'op':'predict'}
     if(not values['body'] in starNames):
-        values['error'] = ''
+        values['error'] = 'star not in catalog'
+        return values
     return  values
