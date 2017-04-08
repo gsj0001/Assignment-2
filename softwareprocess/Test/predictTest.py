@@ -15,4 +15,4 @@ class predictTest(unittest.TestCase):
 
     def test1003_DateNotIncluded(self):
         testDict = SM.predict({'op':'predict', 'body': 'Betelgeuse', 'time': '03:15:42'})
-        self.assert(testDict['date'] = '2001-01-01')
+        self.assertEquals(testDict['date'], '2001-01-01')
