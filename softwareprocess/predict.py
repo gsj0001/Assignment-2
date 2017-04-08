@@ -34,6 +34,8 @@ def predict(values=None):
 #################################################################################################
 
     #Since bad/invalid values have been accounted for, calculation begins here
+    __GREENWICHHOURANGLEARIES__ = '100d42.6'
+
     starTableIndex = starNames.index(values['body'])
     sideHourAngle = siderealHourAngles[starTableIndex]
     declination = declinations[starTableIndex]
