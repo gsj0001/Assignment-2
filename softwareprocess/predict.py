@@ -31,10 +31,12 @@ def predict(values=None):
         values['error'] = 'invalid time'
         return values
 
+#################################################################################################
+
     #Since bad/invalid values have been accounted for, calculation begins here
     starTableIndex = starNames.index(values['body'])
     sideHourAngle = siderealHourAngles[starTableIndex]
     declination = declinations[starTableIndex]
     values['latitude'] = declination
 
-    return  values
+    return values
