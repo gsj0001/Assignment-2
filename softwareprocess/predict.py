@@ -8,7 +8,7 @@ def predict(values=None):
     if(not values['body'] in starNames):
         values['error'] = 'star not in catalog'
         return values
-    dateValues = [int(s) for s in values['date'].split() if s.isDigit()]
+    dateValues = 
     if(dateValues[0] >= __CURRENT_YEAR__ or dateValues[1] > 12 or dateValues[2] > 31):
         values['error'] = 'invalid date'
         return values
