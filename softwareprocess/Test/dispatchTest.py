@@ -4,7 +4,6 @@ import softwareprocess.dispatch as SM
 
 
 class dispatchTest(unittest.TestCase):
-
     # def setUp(self):
     #     self.nominalOpAdjustValues = {'observation' : '30d1.5' , 'height' : '19.0', 'pressure' : '1000', 'horizon' : 'artificial', 'op': 'adjust', 'temperature': '85'}
     #     pass
