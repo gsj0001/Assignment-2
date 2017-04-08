@@ -15,15 +15,15 @@ def predict(values=None):
     if(not 'date' in values):
         values['date'] = '2001-01-01'
 
+    #Give default time
+    if(not 'time' in values):
+        values['time'] = '00:00:00'
+
     #Check values within date
     dateValues = values['date'].split('-')
     if(dateValues[0] >= __CURRENT_YEAR__ or dateValues[1] > 12 or dateValues[2] > 31):
         values['error'] = 'invalid date'
         return values
-
-    #Give default time
-    if(not 'time' in values):
-        values['time'] = '00:00:00'
 
     #Check values within time
     timeValues = values['time'].split(':')
@@ -31,5 +31,7 @@ def predict(values=None):
         values['error'] = 'invalid time'
         return values
 
+    #Since bad/invalid values have been accounted for, calculation begins here
+    int starTableIndex = starNames.index()
 
     return  values
