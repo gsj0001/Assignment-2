@@ -29,7 +29,7 @@ def predict(values=None):
 
     #Check values within time
     timeValues = values['time'].split(':')
-    if(timeValues[0] > 23 or timeValues[1] > 59 or timeValues[2] > 59):
+    if(int(timeValues[0]) > 23 or int(timeValues[1]) > 59 or int(timeValues[2]) > 59):
         values['error'] = 'invalid time'
         return values
 
