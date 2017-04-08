@@ -14,5 +14,5 @@ def predict(values=None):
         return values
     if(not 'date' in values):
         values['date'] = '2001-01-01'
-    
+
     return  values
