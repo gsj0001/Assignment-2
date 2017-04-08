@@ -37,6 +37,6 @@ def predict(values=None):
     starTableIndex = starNames.index(values['body'])
     sideHourAngle = siderealHourAngles[starTableIndex]
     declination = declinations[starTableIndex]
-    values['latitude'] = declination
+    values['latitude'] = declinations[starTableIndex]
 
     return values
