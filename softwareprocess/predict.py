@@ -32,8 +32,8 @@ def predict(values=None):
         return values
 
     #Since bad/invalid values have been accounted for, calculation begins here
-    int starTableIndex = starNames.index(values['body'])
-    sideHourAngle = sideHourAngles[starTableIndex]
+    starTableIndex = starNames.index(values['body'])
+    sideHourAngle = siderealHourAngles[starTableIndex]
     declination = declinations[starTableIndex]
 
     return  values
