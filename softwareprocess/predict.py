@@ -50,7 +50,7 @@ def predict(values=None):
     values['latitude'] = declinations[starTableIndex]
 
     currentDate = datetime(int(dateValues[0]), int(dateValues[1]), int(dateValues[2]), int(timeValues[0]), int(timeValues[1]), int(timeValues[2]))
-    referenceDate = date(2001, 1, 1, 0,0,0)
+    referenceDate = datetime(2001, 1, 1, 0,0,0)
 
     timedelta = currentDate - referenceDate
 
