@@ -45,12 +45,13 @@ def predict(values=None):
 
 
 
+
     return values
 
 def convertStringToDegrees(angle):
     splitStrings = angle.split('d')
-    minutes = (int)splitStrings[0]
-    seconds = (float)splitStrings[1]
+    minutes = int(splitStrings[0])
+    seconds = float(splitStrings[1])
 
     ##List; int and float
     return [minutes, seconds]
@@ -76,4 +77,12 @@ def addAngle(angle1, angle2):
     newAngleString = simplifyAngle(newAngleString)
 
     return newAngleString
+
+
+#passed as validated strings
+#date1 is assumed to be further in time than date2
+def subtractDates(date1, date2):
+    date1Values = date1.split('-')
+    date2Values = date2.split('-')
+
 
