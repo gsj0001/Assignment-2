@@ -27,4 +27,4 @@ class predictTest(unittest.TestCase):
 
     def test1006_GreenWichHourAngle(self):
         testDict = SM.predict({'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:15:42'})
-        self.assertEquals(testDict, {'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:15:42', 'long': '03:15:42', 'lat': '7d24.3'})
+        self.assertEquals(testDict, {'op': 'predict', 'body': 'Betelgeuse', 'date': '2016-01-17', 'time': '03:15:42', 'longitude': '03:15:42', 'latitude': '7d24.3'})
