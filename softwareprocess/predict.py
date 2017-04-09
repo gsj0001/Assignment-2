@@ -1,6 +1,8 @@
 __CURRENT_YEAR__ = 2017
 __LEAP_YEARS_SINCE_2001__ = [2004, 2008, 2012, 2016]
 
+from datetime import date, time, datetime
+
 def predict(values=None):
     starNames = ['Alpheratz', 'Ankaa', 'Schedar', 'Diphda', 'Achernar', 'Hamal', 'Polaris', 'Akamar', 'Menkar', 'Mirfak', 'Aldebaran', 'Rigel', 'Capella', 'Bellatrix', 'Elnath', 'Alnilam', 'Betelgeuse', 'Canopus', 'Sirius', 'Adara', 'Procyon', 'Pollux', 'Avior', 'Suhail', 'Miaplacidus', 'Alphard', 'Regulus', 'Dubhe', 'Denebola', 'Gienah', 'Acrux', 'Gacrux', 'Alioth', 'Spica', 'Alcaid', 'Hadar', 'Menkent', 'Arcturus', 'Rigil', 'Kent', 'Zubenelg', 'Kochab', 'Alphecca', 'Antares', 'Atria', 'Sabik', 'Shaula', 'Rasalhague', 'Etamin', 'Kaus', 'Aust.', 'Vega', 'Nunki', 'Altair', 'Peacock', 'Deneb', 'Enif', 'Alnair', 'Fomalhaut', 'Scheat', 'Markab']
     siderealHourAngles = ['357d41.7', '353d14.1', '349d38.4', '348d54.1', '335d25.5', '327d58.7', '316d41.3', '315d16.8', '314d13.0', '308d37.4', '290d47.1', '281d10.1', '280d31.4', '278d29.8', '278d10.1', '275d44.3', '270d59.1', '263d54.8', '258d31.7', '255d10.8', '244d57.5', '243d25.2', '234d16.6', '222d50.7', '221d38.4', '217d54.1', '207d41.4', '193d49.4', '182d31.8', '175d50.4', '173d07.2', '171d58.8', '166d19.4', '158d29.5', '152d57.8', '148d45.5', '148d05.6', '145d54.2', '139d49.6', '137d03.7', '137d21.0', '126d09.9', '112d24.4', '107d25.2', '102d10.9', '96d20.0', '96d05.2', '90d45.9', '83d41.9', '80d38.2', '75d56.6', '62 d06.9', '53 d17.2', '49d30.7', '33d45.7', '27d42.0', '15d22.4', '13d51.8', '13d36.7']
@@ -37,14 +39,37 @@ def predict(values=None):
 
     #Since bad/invalid values have been accounted for, calculation begins here
     __GREENWICHHOURANGLEARIES__ = '100d42.6'
+    referenceAngle = __GREENWICHHOURANGLEARIES__.split('d')
+    referenceAngleMinutes = int(referenceAngle[0])
+    referenceAngleSeconds = float(referenceAngle[1])
+    referenceAngleDecimal = float(referenceAngleMinutes) + float(referenceAngleSeconds/60)
 
     starTableIndex = starNames.index(values['body'])
     sideHourAngle = siderealHourAngles[starTableIndex]
     declination = declinations[starTableIndex]
     values['latitude'] = declinations[starTableIndex]
 
+    currentDate = datetime(int(dateValues[0]), int(dateValues[1]), int(dateValues[2]), int(timeValues[0]), int(timeValues[1]), int(timeValues[2]))
+    referenceDate = date(2001, 1, 1, 0,0,0)
 
+    timedelta = currentDate - referenceDate
 
+    totalRotation = 360 / 86164.1 * timedelta.seconds
+
+    greenwichhourariesCurrent = referenceAngleDecimal - totalRotation
+
+    sideHourAngleSplit = sideHourAngle.split('d')
+
+    sideHourAngleDecimal = float(sideHourAngle[0]) + float(sideHourAngle[1])
+
+    greenwichhourstar = str(sideHourAngleDecimal + greenwichhourariesCurrent)
+
+    greenwichhourstarSplit = greenwichhourstar.split('.')
+
+    greenwichhourstarMinutes = greenwichhourstarSplit[0]
+    greenwichhourstarSecondsDecimal = '.' + greenwichhourstarSplit[1]
+
+    greenwichhourstarSeconds = str(float(greenwichhourstarSecondsDecimal) * 100/60)[:4]
 
     return values
 
@@ -61,6 +86,8 @@ def simplifyAngle(angle):
     angleMinutes = int(angleAsAList[0])
     while angleMinutes > 360:
         angleMinutes -= 360
+    while angleMinutes < 0:
+        angleMinutes +=360
     newAngleString = str(angleMinutes) + 'd' + angleAsAList[1]
 
     return newAngleString
@@ -84,5 +111,6 @@ def addAngle(angle1, angle2):
 def subtractDates(date1, date2):
     date1Values = date1.split('-')
     date2Values = date2.split('-')
+    if(date2Values[1] > ):
 
 
