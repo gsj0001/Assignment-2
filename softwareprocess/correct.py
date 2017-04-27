@@ -75,6 +75,8 @@ def correct(values=None):
     localHourAngleAsAList = convertStringToDegrees(localHourAngle)
     localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(localHourAngleAsAList[0], localHourAngleAsAList[1]))
 
+    
+
     intermediateDistanceRadians = (math.sin(latitudeRadians) * math.sin(assumedLatitudeRadians)) + (math.cos(latitudeRadians) * math.cos(assumedLatitudeRadians) * math.cos(localHourAngleRadians))
 
     correctedAltitudeRadians = math.asin(intermediateDistanceRadians)
@@ -131,6 +133,15 @@ def simplifyAngle(angle):
 
     return newAngleString
 
+def simplifyRadians(radians):
+    while(radians > math.pi):
+        radians-=2*math.pi
+    while(radians < math.pi):
+        radians+=2*math.pi
+
+    return radians
+
+
 def simplifyLatitude(angle):
     if(type(angle) is str):
         angleList = convertStringToDegrees(angle)
@@ -154,7 +165,7 @@ def addAngle(angle1, angle2):
         addedSeconds-=60
         addedMinutes+=1
     newAngleString = str(addedMinutes) + 'd' + str(addedSeconds)
-    newAngleString = simplifyAngle(newAngleString)
+ #   newAngleString = simplifyAngle(newAngleString)
 
     return newAngleString
 
