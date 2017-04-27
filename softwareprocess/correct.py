@@ -32,7 +32,6 @@ def correct(values=None):
         return values
 
     latitudeSeconds = float(latitude[1])
-    latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitudeMinutes, latitudeSeconds))
 
     longitude = values['long'].split('d')
     try:
@@ -50,7 +49,8 @@ def correct(values=None):
         values['error'] = 'invalid altitude'
         return values
     altitudeSeconds = float(altitude[1])
-    altitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(altitudeMinutes, altitudeSeconds))
+
+
 
     assumedLatitude = values['assumedLat'].split('d')
     try:
@@ -63,7 +63,6 @@ def correct(values=None):
         return values
 
     assumedLatitudeSeconds = float(assumedLatitude[1])
-    assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitudeMinutes, assumedLatitudeSeconds))
 
     assumedLongitude = values['assumedLong'].split('d')
     try:
@@ -72,6 +71,10 @@ def correct(values=None):
         values['error'] = 'invalid assumedLong'
         return values
     assumedLongitude[1] = float(assumedLongitude[1])
+
+    latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitudeMinutes, latitudeSeconds))
+    altitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(altitudeMinutes, altitudeSeconds))
+    assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitudeMinutes, assumedLatitudeSeconds))
 
     localHourAngle = addAngle(longitude, assumedLongitude)
     localHourAngleAsAList = convertStringToDegrees(localHourAngle)
