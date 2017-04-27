@@ -160,5 +160,5 @@ def convertDegreesToRadians(degrees):
     return float(degrees * math.pi / 180.0)
 
 #To Decimal format (degrees)
-def convertRadiansToDegrees(radians):
+def convertRadiansToDecimalDegrees(radians):
     return float(radians * 180.0 / math.pi)
