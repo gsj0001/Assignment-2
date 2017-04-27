@@ -24,7 +24,7 @@ def correct(values=None):
     latitude = values['lat'].split('d')
     latitudeMinutes = int(latitude[0])
     latitudeSeconds = float(latitude[1])
-    latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitude[0], latitude[1]))
+    latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitudeMinutes, latitudeSeconds))
 
     longitude = values['long'].split('d')
     longitudeMinutes = int(longitude[0])
@@ -34,16 +34,16 @@ def correct(values=None):
     altitude = values['altitude'].split('d')
     altitudeMinutes = int(altitude[0])
     altitudeSeconds = float(altitude[1])
-    altitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(altitude[0], altitude[1]))
+    altitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(altitudeMinutes, altitudeSeconds))
 
     assumedLatitude = values['assumedLat'].split('d')
     assumedLatitudeMinutes = int(assumedLatitude[0])
     assumedLatitudeSeconds = float(assumedLatitude[1])
-    assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitude[0], assumedLatitude[1]))
+    assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitudeMinutes, assumedLatitudeSeconds))
 
     assumedLongitude = values['assumedLong'].split('d')
-    assumedLongitudeMinutes = int(assumedLongitude[0])
-    assumedLongitudeSeconds = float(assumedLongitude[1])
+    assumedLongitude[0] = int(assumedLongitude[0])
+    assumedLongitude[1] = float(assumedLongitude[1])
 
     localHourAngle = addAngle(longitude, assumedLongitude)
     localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(convertStringToDegrees(localHourAngle)))
@@ -56,7 +56,7 @@ def correct(values=None):
 
     correctedDistanceArcMinutes = correctedDistanceRadians * 10800 / math.pi
 
-    correctedAzimuth = math.acos( math.sin(latitudeRadians - intermediateDistanceRadians) / (math.cos(assumedLatitudeRadians) * math.cos(correctedDistanceRadians )))
+    correctedAzimuth = math.acos( math.sin(latitudeRadians - intermediateDistanceRadians) / (math.cos(assumedLatitudeRadians) * math.cos(math.arcsin(correctedDistanceRadians) )))
 
     values['correctedDistance'] = str(correctedDistanceArcMinutes)
 
@@ -99,6 +99,20 @@ def simplifyAngle(angle):
     newAngleString = str(angleMinutes) + 'd' + angleAsAList[1]
 
     return newAngleString
+
+def simplifyLatitude(angle):
+    if(type(angle) is str):
+        angleList = convertStringToDegrees(angle)
+        simplifyLatitude(angleList)
+    elif(type(angle) is list):
+        while(angle[0] <= -90):
+            angle[0]+= 90
+        while(angle[0] > 90):
+            angle[0]-= 90
+    elif(type(angle) is float):
+        {
+
+        }
 
 def addAngle(angle1, angle2):
     angle1AsAList = convertStringToDegrees(angle1)
