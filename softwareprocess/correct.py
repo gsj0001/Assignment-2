@@ -66,7 +66,8 @@ def correct(values=None):
     assumedLongitude[1] = float(assumedLongitude[1])
 
     localHourAngle = addAngle(longitude, assumedLongitude)
-    localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(convertStringToDegrees(localHourAngle)))
+    localHourAngleAsAList = convertStringToDegrees(localHourAngle)
+    localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(localHourAngleAsAList[0], localHourAngleAsAList[1]))
 
     intermediateDistanceRadians = (math.sin(latitudeRadians) * math.sin(assumedLatitudeRadians)) + (math.cos(latitudeRadians) * math.cos(assumedLatitudeRadians) * math.cos(localHourAngleRadians))
 
@@ -120,7 +121,7 @@ def simplifyAngle(angle):
         angleMinutes -= 360
     while angleMinutes < 0:
         angleMinutes +=360
-    newAngleString = str(angleMinutes) + 'd' + angleAsAList[1]
+    newAngleString = str(angleMinutes) + 'd' + str(angleAsAList[1])
 
     return newAngleString
 
