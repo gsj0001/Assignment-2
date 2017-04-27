@@ -30,7 +30,6 @@ def correct(values=None):
     if(latitudeMinutes >90 or latitudeMinutes<-90):
         values['error'] = 'invalid lat'
         return values
-
     latitudeSeconds = float(latitude[1])
 
     longitude = values['long'].split('d')
@@ -41,7 +40,6 @@ def correct(values=None):
         return values
     longitudeSeconds = float(longitude[1])
 
-
     altitude = values['altitude'].split('d')
     try:
         altitudeMinutes = int(altitude[0])
@@ -49,8 +47,6 @@ def correct(values=None):
         values['error'] = 'invalid altitude'
         return values
     altitudeSeconds = float(altitude[1])
-
-
 
     assumedLatitude = values['assumedLat'].split('d')
     try:
@@ -61,7 +57,6 @@ def correct(values=None):
     if (assumedLatitudeMinutes > 90 or assumedLatitudeMinutes < -90):
         values['error'] = 'invalid assumedLat'
         return values
-
     assumedLatitudeSeconds = float(assumedLatitude[1])
 
     assumedLongitude = values['assumedLong'].split('d')
