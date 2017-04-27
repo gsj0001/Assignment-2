@@ -88,8 +88,11 @@ def correct(values=None):
 def convertStringToDegrees(angle):
     if(not type(angle) is list):
         splitStrings = angle.split('d')
-    minutes = int(splitStrings[0])
-    seconds = float(splitStrings[1])
+        minutes = int(splitStrings[0])
+        seconds = float(splitStrings[1])
+    else:
+        minutes = int(angle[0])
+        seconds = float(angle[1])
 
     ##List; int and float
     return [minutes, seconds]
