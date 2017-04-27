@@ -63,7 +63,6 @@ def correct(values=None):
     except ValueError:
         values['error'] = 'invalid assumedLong'
         return values
-    assumedLongitude[0] = int(assumedLongitude[0])
     assumedLongitude[1] = float(assumedLongitude[1])
 
     localHourAngle = addAngle(longitude, assumedLongitude)
