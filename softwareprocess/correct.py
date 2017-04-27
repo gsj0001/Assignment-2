@@ -3,7 +3,7 @@ import math
 def correct(values=None):
 
     if(values == None or not 'lat' in values or not 'long' in values or not 'altitude' in values or not 'assumedLat' in values or not 'assumedLong' in values):
-        values['error'] = 'mandatory information is missing'
+        values = {'error': 'mandatory information is missing', 'op':'correct'}
         return values
     if(not 'd' in values['lat']):
         values['error'] = 'invalid input for lat'
@@ -22,26 +22,47 @@ def correct(values=None):
         return values
 
     latitude = values['lat'].split('d')
-    latitudeMinutes = int(latitude[0])
+    try:
+        latitudeMinutes = int(latitude[0])
+    except ValueError:
+        values['error'] = 'invalid lat'
+        return values
     latitudeSeconds = float(latitude[1])
     latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitudeMinutes, latitudeSeconds))
 
     longitude = values['long'].split('d')
-    longitudeMinutes = int(longitude[0])
+    try:
+        longitudeMinutes = int(longitude[0])
+    except ValueError:
+        values['error'] = 'invalid long'
+        return values
     longitudeSeconds = float(longitude[1])
 
 
     altitude = values['altitude'].split('d')
-    altitudeMinutes = int(altitude[0])
+    try:
+        altitudeMinutes = int(altitude[0])
+    except ValueError:
+        values['error'] = 'invalid altitude'
+        return values
     altitudeSeconds = float(altitude[1])
     altitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(altitudeMinutes, altitudeSeconds))
 
     assumedLatitude = values['assumedLat'].split('d')
-    assumedLatitudeMinutes = int(assumedLatitude[0])
+    try:
+        assumedLatitudeMinutes = int(assumedLatitude[0])
+    except ValueError:
+        values['error'] = 'invalid assumedLat'
+        return values
     assumedLatitudeSeconds = float(assumedLatitude[1])
     assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitudeMinutes, assumedLatitudeSeconds))
 
     assumedLongitude = values['assumedLong'].split('d')
+    try:
+        assumedLongitudeMinutes = int(assumedLongitude[0])
+    except ValueError:
+        values['error'] = 'invalid assumedLong'
+        return values
     assumedLongitude[0] = int(assumedLongitude[0])
     assumedLongitude[1] = float(assumedLongitude[1])
 
