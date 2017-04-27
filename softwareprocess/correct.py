@@ -86,6 +86,7 @@ def correct(values=None):
 
 #in DMS format
 def convertStringToDegrees(angle):
+    if()
     splitStrings = angle.split('d')
     minutes = int(splitStrings[0])
     seconds = float(splitStrings[1])

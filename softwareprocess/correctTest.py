@@ -13,6 +13,6 @@ class correctTest(unittest.TestCase):
                                      {'op': 'correct', 'lat': '16.0d32.3', 'long': '95d41.6', 'altitude': '13d42.3',
                                       'assumedLat': '-53d38.4', 'assumedLong': '74d35.3','error':'invalid lat'})
     def test1003_InvalidAssumedLat(self):
-        self.assertEquals(SM.correct({'op':'correct', 'lat': '16.0d32.3', 'long':'95d41.6','altitude':'13d42.3','assumedLat':'-153d38.4','assumedLong':'74d35.3'}),
-                                     {'op': 'correct', 'lat': '16.0d32.3', 'long': '95d41.6', 'altitude': '13d42.3',
+        self.assertEquals(SM.correct({'op':'correct', 'lat': '16d32.3', 'long':'95d41.6','altitude':'13d42.3','assumedLat':'-153d38.4','assumedLong':'74d35.3'}),
+                                     {'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3',
                                       'assumedLat': '-153d38.4', 'assumedLong': '74d35.3','error':'invalid assumedLat'})
