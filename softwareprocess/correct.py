@@ -27,6 +27,10 @@ def correct(values=None):
     except ValueError:
         values['error'] = 'invalid lat'
         return values
+    if(latitudeMinutes >90 or latitudeMinutes<-90):
+        values['error'] = 'invalid lat'
+        return values
+
     latitudeSeconds = float(latitude[1])
     latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitudeMinutes, latitudeSeconds))
 
@@ -54,6 +58,10 @@ def correct(values=None):
     except ValueError:
         values['error'] = 'invalid assumedLat'
         return values
+    if (assumedLatitudeMinutes > 90 or assumedLatitudeMinutes < -90):
+        values['error'] = 'invalid assumedLat'
+        return values
+
     assumedLatitudeSeconds = float(assumedLatitude[1])
     assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitudeMinutes, assumedLatitudeSeconds))
 
@@ -101,7 +109,7 @@ def convertStringToDegrees(angle):
 #angleAsAList is assumed to have only two elements in it, minutes and seconds
 #returns a string for the purposes of values
 def convertDegreesToString(angleAsAList):
-    return str(angleAsAList[0] + 'd' + angleAsAList[1])
+    return str(angleAsAList[0]) + 'd' + str(angleAsAList[1])
 
 def convertRadiansToDegrees(radians):
     degrees = radians * 180 / math.pi
