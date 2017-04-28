@@ -17,10 +17,10 @@ class correctTest(unittest.TestCase):
         self.assertEquals(SM.correct({'op':'correct', 'lat': '16d32.3', 'long':'95d41.6','altitude':'13d42.3','assumedLat':'-153d38.4','assumedLong':'74d35.3'}),
                                      {'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3',
                                       'assumedLat': '-153d38.4', 'assumedLong': '74d35.3','error':'invalid assumedLat'})
-    # def test2000_ValueCheck(self):
-    #     self.assertEquals(SM.correct({'op':'correct', 'lat': '16d32.3', 'long':'95d41.6','altitude':'13d42.3','assumedLat':'-53d38.4','assumedLong':'74d35.3'}),
-    #                       {'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3',
-    #                        'assumedLat': '-153d38.4', 'assumedLong': '74d35.3', 'correctedDistance': '-3950', 'correctedAzimuth': '164d43.1'})
+    def test2000_ValueCheck(self):
+        self.assertEquals(SM.correct({'op':'correct', 'lat': '16d32.3', 'long':'95d41.6','altitude':'13d42.3','assumedLat':'-53d38.4','assumedLong':'74d35.3'}),
+                          {'op': 'correct', 'lat': '16d32.3', 'long': '95d41.6', 'altitude': '13d42.3',
+                           'assumedLat': '-153d38.4', 'assumedLong': '74d35.3', 'correctedDistance': '-3950', 'correctedAzimuth': '164d43.1'})
 
     def test3000_simplifyRadians(self):
         self.assertAlmostEquals(SM.simplifyRadians(24 * math.pi) , 0)
