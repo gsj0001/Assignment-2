@@ -67,42 +67,46 @@ def correct(values=None):
         return values
     assumedLongitude[1] = float(assumedLongitude[1])
 
-    latitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(latitudeMinutes, latitudeSeconds))
-    altitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(altitudeMinutes, altitudeSeconds))
-    assumedLatitudeRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(assumedLatitudeMinutes, assumedLatitudeSeconds))
+    latitudeRadians = convertStringToRadians(values['lat'])
+    longitudeRadians = convertStringToRadians(values['long'])
+    altitudeRadians = convertStringToRadians(values['altitude'])
+    assumedLatitudeRadians = convertStringToRadians(values['assumedLat'])
+    assumedLongitudeRadians = convertStringToRadians(values['assumedLong'])
 
-    localHourAngle = addAngle(longitude, assumedLongitude)
-    localHourAngleAsAList = convertStringToDegrees(localHourAngle)
-    localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(localHourAngleAsAList[0], localHourAngleAsAList[1]))
+    localHourAngleRadians = addAngleRadians(longitudeRadians, assumedLongitudeRadians)
+
+ ##   localHourAngle = addAngle(longitude, assumedLongitude)
+ ##   localHourAngleAsAList = convertStringToDegrees(localHourAngle)
+ ##   localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(localHourAngleAsAList[0], localHourAngleAsAList[1]))
 
     ##sanitizing values calculated in radians
-    latitudeRadians = simplifyRadians(latitudeRadians)
-    altitudeRadians = simplifyRadians(altitudeRadians)
-    assumedLatitudeRadians = simplifyRadians(assumedLatitudeRadians)
-    localHourAngleRadians = simplifyRadians(localHourAngleRadians)
+    # latitudeRadians = simplifyRadians(latitudeRadians)
+    # altitudeRadians = simplifyRadians(altitudeRadians)
+    # assumedLatitudeRadians = simplifyRadians(assumedLatitudeRadians)
+    # localHourAngleRadians = simplifyRadians(localHourAngleRadians)
 
     intermediateDistanceRadians = (math.sin(latitudeRadians) * math.sin(assumedLatitudeRadians)) + (math.cos(latitudeRadians) * math.cos(assumedLatitudeRadians) * math.cos(localHourAngleRadians))
 
     ##sanitizing
-    intermediateDistanceRadians = simplifyRadians(intermediateDistanceRadians)
+#    intermediateDistanceRadians = simplifyRadians(intermediateDistanceRadians)
 
     correctedAltitudeRadians = math.asin(intermediateDistanceRadians)
 
     ##sanitizing
-    correctedAltitudeRadians = simplifyRadians(correctedAltitudeRadians)
+  #  correctedAltitudeRadians = simplifyRadians(correctedAltitudeRadians)
 
     correctedDistanceRadians = altitudeRadians - correctedAltitudeRadians
 
     ##sanitizing
-    correctedDistanceRadians = simplifyRadians(correctedDistanceRadians)
+#    correctedDistanceRadians = simplifyRadians(correctedDistanceRadians)
 
-    correctedDistanceArcMinutes = correctedDistanceRadians * 10800 / math.pi
+    correctedDistanceArcMinutes = int(correctedDistanceRadians * 10800 / math.pi)
 
-    correctedAzimuth = math.acos( math.sin(latitudeRadians - intermediateDistanceRadians) / (math.cos(assumedLatitudeRadians) * math.cos(math.asin(intermediateDistanceRadians) )))
+    correctedAzimuthRadians = math.acos( (math.sin(latitudeRadians) - (math.sin(assumedLatitudeRadians) * intermediateDistanceRadians)) / (math.cos(assumedLatitudeRadians) * math.cos(math.asin(intermediateDistanceRadians))))
 
     values['correctedDistance'] = str(correctedDistanceArcMinutes)
 
-    values['correctedAzimuth'] = convertDegreesToString(convertRadiansToDegrees(correctedAzimuth))
+    values['correctedAzimuth'] = convertDegreesToString(convertRadiansToDegrees(correctedAzimuthRadians))
 
     return values
 
@@ -118,6 +122,23 @@ def convertStringToDegrees(angle):
 
     ##List; int and float
     return [minutes, seconds]
+
+##assuming string
+def convertStringToRadians(angle):
+    splitStrings = angle.split('d')
+    minutes = splitStrings[0]
+    seconds = splitStrings[1]
+    angleDegrees = float(splitStrings[0]) + float(splitStrings[1])
+    angleRadians = angleDegrees * math.pi / 180
+
+    return angleRadians
+
+#assuming two floats
+def addAngleRadians(angle1, angle2):
+    angle = angle1 + angle2
+    simplifyRadians(angle)
+    return angle
+
 
 #angleAsAList is assumed to have only two elements in it, minutes and seconds
 #returns a string for the purposes of values
@@ -188,7 +209,3 @@ def convertDegreeMinutesIntoDegreeDecimal(degrees, minutes):
 #In Decimal format
 def convertDegreesToRadians(degrees):
     return float(degrees * math.pi / 180.0)
-
-#To Decimal format (degrees)
-def convertRadiansToDecimalDegrees(radians):
-    return float(radians * 180.0 / math.pi)
