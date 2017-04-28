@@ -75,13 +75,26 @@ def correct(values=None):
     localHourAngleAsAList = convertStringToDegrees(localHourAngle)
     localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(localHourAngleAsAList[0], localHourAngleAsAList[1]))
 
-    
+    ##sanitizing values calculated in radians
+    latitudeRadians = simplifyRadians(latitudeRadians)
+    altitudeRadians = simplifyRadians(altitudeRadians)
+    assumedLatitudeRadians = simplifyRadians(assumedLatitudeRadians)
+    localHourAngleRadians = simplifyRadians(localHourAngleRadians)
 
     intermediateDistanceRadians = (math.sin(latitudeRadians) * math.sin(assumedLatitudeRadians)) + (math.cos(latitudeRadians) * math.cos(assumedLatitudeRadians) * math.cos(localHourAngleRadians))
 
+    ##sanitizing
+    intermediateDistanceRadians = simplifyRadians(intermediateDistanceRadians)
+
     correctedAltitudeRadians = math.asin(intermediateDistanceRadians)
 
+    ##sanitizing
+    correctedAltitudeRadians = simplifyRadians(correctedAltitudeRadians)
+
     correctedDistanceRadians = altitudeRadians - correctedAltitudeRadians
+
+    ##sanitizing
+    correctedDistanceRadians = simplifyRadians(correctedDistanceRadians)
 
     correctedDistanceArcMinutes = correctedDistanceRadians * 10800 / math.pi
 
