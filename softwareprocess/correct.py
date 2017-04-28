@@ -1,6 +1,9 @@
 import math
 
 def correct(values=None):
+#######################################################################################
+# Testing for missing/invalid values
+#######################################################################################
 
     if(values == None or not 'lat' in values or not 'long' in values or not 'altitude' in values or not 'assumedLat' in values or not 'assumedLong' in values):
         values = {'error': 'mandatory information is missing', 'op':'correct'}
@@ -21,6 +24,9 @@ def correct(values=None):
         values['error'] = 'invalid input for assumedLong'
         return values
 
+#######################################################################################
+#Testing for non-int values for degrees
+#######################################################################################
     latitude = values['lat'].split('d')
     try:
         latitudeMinutes = int(latitude[0])
@@ -67,11 +73,19 @@ def correct(values=None):
         return values
     assumedLongitude[1] = float(assumedLongitude[1])
 
+#######################################################################################
+#Converting to radians, for the use of math library trig functions
+#######################################################################################
+
     latitudeRadians = convertStringToRadians(values['lat'])
     longitudeRadians = convertStringToRadians(values['long'])
     altitudeRadians = convertStringToRadians(values['altitude'])
     assumedLatitudeRadians = convertStringToRadians(values['assumedLat'])
     assumedLongitudeRadians = convertStringToRadians(values['assumedLong'])
+
+#######################################################################################
+#Computing
+#######################################################################################
 
     localHourAngleRadians = addAngleRadians(longitudeRadians, assumedLongitudeRadians)
 
@@ -155,21 +169,6 @@ def simplifyRadians(radians):
         radians+=2*math.pi
 
     return radians
-
-
-def simplifyLatitude(angle):
-    if(type(angle) is str):
-        angleList = convertStringToDegrees(angle)
-        simplifyLatitude(angleList)
-    elif(type(angle) is list):
-        while(angle[0] <= -90):
-            angle[0]+= 90
-        while(angle[0] > 90):
-            angle[0]-= 90
-    elif(type(angle) is float):
-        {
-
-        }
 
 def addAngle(angle1, angle2):
     angle1AsAList = convertStringToDegrees(angle1)
