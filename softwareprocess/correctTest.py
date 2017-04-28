@@ -29,4 +29,4 @@ class correctTest(unittest.TestCase):
         self.assertAlmostEquals(SM.convertRadiansToDegrees(math.pi), [180, 0.0])
 
     def test3002_convertStringToRadians(self):
-        self.assertAlmostEquals(SM.converStringToRadians('180d0.0'), math.pi)
+        self.assertAlmostEquals(SM.convertStringToRadians('180d0.0'), math.pi)
