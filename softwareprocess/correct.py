@@ -105,6 +105,10 @@ def correct(values=None):
 
     return values
 
+def azimuth(lat, assumedLat, intermediateDistance,):
+    return math.acos( (math.sin(lat) - (math.sin(assumedLat) * intermediateDistance)) / (math.cos(assumedLat) * math.cos(math.asin(intermediateDistance))))
+
+
 ##assuming string
 def convertStringToRadians(angle):
     splitStrings = angle.split('d')
