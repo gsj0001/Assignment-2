@@ -75,30 +75,11 @@ def correct(values=None):
 
     localHourAngleRadians = addAngleRadians(longitudeRadians, assumedLongitudeRadians)
 
- ##   localHourAngle = addAngle(longitude, assumedLongitude)
- ##   localHourAngleAsAList = convertStringToDegrees(localHourAngle)
- ##   localHourAngleRadians = convertDegreesToRadians(convertDegreeMinutesIntoDegreeDecimal(localHourAngleAsAList[0], localHourAngleAsAList[1]))
-
-    ##sanitizing values calculated in radians
-    # latitudeRadians = simplifyRadians(latitudeRadians)
-    # altitudeRadians = simplifyRadians(altitudeRadians)
-    # assumedLatitudeRadians = simplifyRadians(assumedLatitudeRadians)
-    # localHourAngleRadians = simplifyRadians(localHourAngleRadians)
-
     intermediateDistanceRadians = (math.sin(latitudeRadians) * math.sin(assumedLatitudeRadians)) + (math.cos(latitudeRadians) * math.cos(assumedLatitudeRadians) * math.cos(localHourAngleRadians))
-
-    ##sanitizing
-#    intermediateDistanceRadians = simplifyRadians(intermediateDistanceRadians)
 
     correctedAltitudeRadians = math.asin(intermediateDistanceRadians)
 
-    ##sanitizing
-  #  correctedAltitudeRadians = simplifyRadians(correctedAltitudeRadians)
-
     correctedDistanceRadians = altitudeRadians - correctedAltitudeRadians
-
-    ##sanitizing
-#    correctedDistanceRadians = simplifyRadians(correctedDistanceRadians)
 
     correctedDistanceArcMinutes = int(correctedDistanceRadians * 10800 / math.pi)
 
@@ -146,13 +127,13 @@ def convertDegreesToString(angleAsAList):
     return str(angleAsAList[0]) + 'd' + str(angleAsAList[1])
 
 def convertRadiansToDegrees(radians):
-    degrees = radians * 180 / math.pi
+    degrees = float(radians * 180 / math.pi)
 
     degreesInt = int(degrees)
 
-    degreesList = [degreesInt, (degrees - degreesInt)]
+    degreesList = [degreesInt, float(degrees - degreesInt)]
 
-    degreesList[1]*= 60
+    degreesList[1] = round(degreesList[1] * 60, 1)
 
     return degreesList
 
