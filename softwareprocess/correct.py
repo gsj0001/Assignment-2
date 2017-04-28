@@ -141,7 +141,7 @@ def convertRadiansToDegrees(radians):
 def simplifyRadians(radians):
     while(radians > math.pi):
         radians-=2*math.pi
-    while(radians < math.pi):
+    while(radians < -1 * math.pi):
         radians+=2*math.pi
 
     return radians
