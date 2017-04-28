@@ -97,7 +97,7 @@ def correct(values=None):
 
     correctedDistanceArcMinutes = int(correctedDistanceRadians * 10800 / math.pi)
 
-    correctedAzimuthRadians = math.acos( (math.sin(latitudeRadians) - (math.sin(assumedLatitudeRadians) * intermediateDistanceRadians)) / (math.cos(assumedLatitudeRadians) * math.cos(math.asin(intermediateDistanceRadians))))
+    correctedAzimuthRadians = azimuth(latitudeRadians, assumedLatitudeRadians, intermediateDistanceRadians)
 
     values['correctedDistance'] = str(correctedDistanceArcMinutes)
 
@@ -105,7 +105,7 @@ def correct(values=None):
 
     return values
 
-def azimuth(lat, assumedLat, intermediateDistance,):
+def azimuth(lat, assumedLat, intermediateDistance):
     return math.acos( (math.sin(lat) - (math.sin(assumedLat) * intermediateDistance)) / (math.cos(assumedLat) * math.cos(math.asin(intermediateDistance))))
 
 
