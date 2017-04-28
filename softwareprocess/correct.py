@@ -123,7 +123,7 @@ def addAngleRadians(angle1, angle2):
 
 
 #angleAsAList is assumed to have only two elements in it, minutes and seconds
-#returns a string for the purposes of values
+#returns a string for the purposes of values[]
 def convertDegreesToString(angleAsAList):
     return str(angleAsAList[0]) + 'd' + str(angleAsAList[1])
 
@@ -138,17 +138,6 @@ def convertRadiansToDegrees(radians):
 
     return degreesList
 
-def simplifyAngle(angle):
-    angleAsAList = convertStringToDegrees(angle)
-    angleMinutes = int(angleAsAList[0])
-    while angleMinutes > 360:
-        angleMinutes -= 360
-    while angleMinutes < 0:
-        angleMinutes +=360
-    newAngleString = str(angleMinutes) + 'd' + str(angleAsAList[1])
-
-    return newAngleString
-
 def simplifyRadians(radians):
     while(radians > math.pi):
         radians-=2*math.pi
@@ -156,23 +145,3 @@ def simplifyRadians(radians):
         radians+=2*math.pi
 
     return radians
-
-def addAngle(angle1, angle2):
-    angle1AsAList = convertStringToDegrees(angle1)
-    angle2AsAList = convertStringToDegrees(angle2)
-    addedMinutes = angle1AsAList[0] + angle2AsAList[0]
-    addedSeconds = angle1AsAList[1] + angle2AsAList[1]
-    while addedSeconds > 60:
-        addedSeconds-=60
-        addedMinutes+=1
-    newAngleString = str(addedMinutes) + 'd' + str(addedSeconds)
- #   newAngleString = simplifyAngle(newAngleString)
-
-    return newAngleString
-
-def convertDegreeMinutesIntoDegreeDecimal(degrees, minutes):
-    return float(degrees + minutes/60)
-
-#In Decimal format
-def convertDegreesToRadians(degrees):
-    return float(degrees * math.pi / 180.0)
